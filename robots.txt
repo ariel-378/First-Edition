@@ -16,4 +16,4 @@ Disallow: /editor-videos.html
 Disallow: /editor-writers.html
 Disallow: /editor.html
 
-Sitemap: https://ariel-378.github.io/student-newspaper-template/sitemap.xml
+Sitemap: https://ariel-378.github.io/First-Edition/sitemap.xml

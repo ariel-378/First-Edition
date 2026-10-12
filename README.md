@@ -4,7 +4,7 @@ A framework-free (vanilla HTML/CSS/JS) website for a student newspaper — secti
 pages, articles, sports, videos, puzzles & games, search, and an in-app
 **editor dashboard**. No build step, no dependencies.
 
-**▶ Live demo: <https://ariel-378.github.io/student-newspaper-template/>**
+**▶ Live demo: <https://ariel-378.github.io/First-Edition/>**
 
 The demo runs in standalone mode with no host platform behind it, so you can
 open the editor yourself: use the **"Editor preview"** link in the account bar,

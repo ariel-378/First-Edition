@@ -76,7 +76,7 @@ window.WL_CONFIG = {
   //  Used by `npm run brand` to generate sitemap.xml and robots.txt, which
   //  need absolute URLs. Leave blank until you know the address; no sitemap is
   //  better than one pointing at somebody else's site.
-  siteUrl: "https://ariel-378.github.io/student-newspaper-template",
+  siteUrl: "https://ariel-378.github.io/First-Edition",
 
   // ── Where newsletter signups go ──────────────────────────────────────────
   //  The Subscribe link in the utility bar collects an email address — and only
