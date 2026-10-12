@@ -51,13 +51,15 @@ you — click **Reset demo data** in the dashboard to put it back.
 ## Sample content
 
 The repo ships with a demo newsroom so a fresh copy looks like a working paper
-rather than an empty page: eleven stories, three teams with brackets, two
-videos, and flat SVG illustrations standing in for photos.
+rather than an empty page: eleven stories, a fourteen-person masthead, three
+teams with brackets, two videos, and flat SVG illustrations standing in for
+photos.
 
 **All of it is invented** — East High School, The Wildcat Times, every byline,
-every person quoted, every score. None of it refers to a real school or a real
-person. To start clean, empty the objects in `articles.js`, `teams.js`,
-and `videos.js`; each file says so at the top.
+every staff member, every person quoted, every score. None of it refers to a
+real school or a real person. To start clean, empty the objects in
+`articles.js`, `staff-data.js`, `teams.js`, and `videos.js`; each file says so
+at the top.
 
 ## Tests
 
