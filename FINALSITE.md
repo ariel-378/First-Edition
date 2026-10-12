@@ -1,4 +1,4 @@
-# Newspaper Platform — Finalsite Integration Guide
+# First Edition — Finalsite Integration Guide
 
 A framework-free (vanilla HTML/CSS/JS) student-newspaper website. It runs as a set
 of static pages with a client-side data layer, an in-app editor dashboard, and a
@@ -278,11 +278,11 @@ shippable.
 
 ## Running locally (standalone/demo)
 
-No build step. Serve the folder with any static server, e.g.:
+No build step. Serve the folder with any static server:
 
 ```bash
-python3 -m http.server 8000
-# then open http://localhost:8000
+npm run serve                 # http://localhost:8781
+python3 -m http.server 8000   # or any other static server
 ```
 
 With no `WL_CONTEXT` present, the site runs in demo mode: use the **"Editor preview"**

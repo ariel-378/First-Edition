@@ -20,7 +20,7 @@ There are two repositories with identical code:
 
 | Repo | Purpose |
 |---|---|
-| `newspaper-template` | The reusable platform. Ships with sample content you delete. |
+| `First-Edition` | The reusable platform. Ships with sample content you delete. |
 | A school's deployment | The same code, plus that school's `config.js` and content. |
 
 Only `config.js`, the content files, and the paper name stamped into each
@@ -276,7 +276,7 @@ and needs no CSP allowance.
 
 ```bash
 npm install   # once — jsdom, used only by the tests
-npm test      # 996 checks across 23 suites
+npm test      # 1046 checks across 24 suites
 npm run brand # after changing `name`/`school` in config.js
 ```
 

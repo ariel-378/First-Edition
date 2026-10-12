@@ -55,8 +55,11 @@ export async function run() {
       metaOf(html, "og:description"));
     check.equal("twitter:title matches", metaOf(html, "twitter:title"), a.title);
 
+    // The paper's name is whatever the page was stamped with, so this holds
+    // for any deployment rather than one hard-coded masthead.
+    const paperName = (html.match(/data-wl-name="([^"]*)"/) || [])[1] || "";
     check.ok("none of it says only the paper's name",
-      metaOf(html, "og:title") !== "The Woodley Leaves" && metaOf(html, "og:title") !== "The Wildcat Times",
+      paperName.length > 0 && metaOf(html, "og:title") !== paperName,
       "the bug this whole change exists to fix");
   }
 

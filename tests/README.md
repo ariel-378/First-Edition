@@ -118,9 +118,10 @@ interaction, which is what `check.clean` inspects.
 
 ## Two things worth knowing
 
-**Seed your own content.** `newspaper-template` ships with zero articles by
-design. Any test that needs article rows must create them — `seedArticles(window)`
-does it, and no-ops when the site already has content.
+**Seed your own content.** First Edition ships eleven sample stories, but a
+school's deployment may ship none, so no test may assume articles exist. Any
+test that needs article rows must create them — `seedArticles(window)` does it,
+and no-ops when the site already has content.
 
 **A passing test proves nothing until you've seen it fail.** Both regression
 tests above were verified by reintroducing the original bug and confirming the

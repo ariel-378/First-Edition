@@ -168,12 +168,8 @@ Not a build step — they write files you commit.
 ```bash
 npm run stories    # regenerate stories/ from articles.js
 npm run brand      # stamp the paper's name into every <head>, then stories
-npm run serve      # a local static server on :8000
+npm run serve      # a local static server on :8781
 ```
-
-`setup/build-demo.mjs` is scaffolding for the hosted preview only: it strips
-shared-editing credentials and switches tags on. It is not part of the
-platform.
 
 ## Where to change things
 

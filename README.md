@@ -1,8 +1,9 @@
-# Student Newspaper Platform
+# First Edition
 
-A framework-free (vanilla HTML/CSS/JS) website for a student newspaper — section
+A framework-free (vanilla HTML/CSS/JS) platform for a student newspaper — section
 pages, articles, sports, videos, puzzles & games, search, and an in-app
-**editor dashboard**. No build step, no dependencies.
+**editor dashboard**. No build step, no dependencies. Take it, rename it, and
+run your school's paper on it.
 
 **▶ Live demo: <https://ariel-378.github.io/First-Edition/>**
 
@@ -65,7 +66,7 @@ npm install   # once — pulls jsdom, the only dependency
 npm test
 ```
 
-1041 checks across 24 suites: every page loads clean, every editor control is
+1046 checks across 24 suites: every page loads clean, every editor control is
 pressed without throwing, and content added in the editor reaches the reader
 pages. See [tests/README.md](tests/README.md).
 
@@ -153,6 +154,8 @@ Two things worth knowing:
   will surprise you.
 - **[CUSTOMIZE.md](CUSTOMIZE.md)** — rebrand the paper for your school (the Brand
   design tab, or editing `config.js`).
+- **[INTEGRATION.md](INTEGRATION.md)** — for the host platform's administrator:
+  where content lives, the identity hook, and a setup checklist.
 
 ## Project layout
 

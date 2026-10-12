@@ -101,7 +101,7 @@ export async function run() {
     check.ok("delete removes the record", !window.WLArticles.getById(doomed));
 
     // Reset returns to the shipped article set and drops every local change.
-    // The Maret site ships stories, the template ships none, so assert the
+    // A deployment may ship sample stories or none at all, so assert the
     // invariant that holds either way rather than assuming demo content exists.
     const shipped = Object.keys(window.WL_ARTICLES || {}).sort();
     window.WLArticles.setFeatured("News", rows()[0].querySelector('[data-a="feature"]').dataset.id);

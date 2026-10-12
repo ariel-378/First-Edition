@@ -52,10 +52,10 @@ export async function run() {
 
     // Word Search — commas or newlines both work, which is what editors expect.
     openPuzzle(3);
-    type($("#ws-words"), "MARET, LEAVES, PRESS");
+    type($("#ws-words"), "WILDCAT, TIMES, PRESS");
     click($("#ws-save"));
     check.equal("word search accepts comma-separated words",
-      window.WLPuzzles.getWordsearchPool().at(-1).words, ["MARET", "LEAVES", "PRESS"]);
+      window.WLPuzzles.getWordsearchPool().at(-1).words, ["WILDCAT", "TIMES", "PRESS"]);
 
     // Connections
     openPuzzle(2);
@@ -64,7 +64,7 @@ export async function run() {
     const groups = {
       yellow: ["Frog parts", "LEG, EYE, TONGUE, TOE"],
       green:  ["Trees", "OAK, ELM, ASH, FIR"],
-      blue:   ["DC areas", "WOODLEY, DUPONT, ADAMS, LOGAN"],
+      blue:   ["Capital cities", "PARIS, ROME, LIMA, OSLO"],
       purple: ["___ press", "FREE, PRINTING, PRESS, FULL"],
     };
     for (const [colour, [category, words]] of Object.entries(groups)) {
