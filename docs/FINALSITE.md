@@ -278,11 +278,11 @@ shippable.
 
 ## Running locally (standalone/demo)
 
-No build step. Serve the folder with any static server:
+No build step. Serve `site/` with any static server:
 
 ```bash
 npm run serve                 # http://localhost:8781
-python3 -m http.server 8000   # or any other static server
+cd site && python3 -m http.server 8000   # or any other static server
 ```
 
 With no `WL_CONTEXT` present, the site runs in demo mode: use the **"Editor preview"**

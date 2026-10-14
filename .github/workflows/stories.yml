@@ -13,10 +13,10 @@ on:
   push:
     branches: [main]
     paths:
-      - published-content.js
-      - content-bundle.js
-      - article.html
-      - config.js
+      - site/published-content.js
+      - site/content-bundle.js
+      - site/article.html
+      - site/config.js
       - setup/build-stories.mjs
   workflow_dispatch:
 
@@ -50,7 +50,7 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add stories story-url.js
+          git add site/stories site/story-url.js
           git commit -m "chore: regenerate story pages"
           # A push can lose a race with the publishing service. Rebase and retry
           # rather than failing and leaving new stories without pages.

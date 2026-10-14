@@ -116,7 +116,7 @@ of each other's way; it is not Google Docs.
 **Offline.** Work keeps saving to the browser and goes up when the connection
 returns. The panel says which state it is in.
 
-**Publishing.** After a change the Worker commits `published-content.js` to the
+**Publishing.** After a change the Worker commits `site/published-content.js` to the
 repo, at most once every two minutes so the history is not one commit per
 keystroke. A failed commit never fails an editor's save — the work is already
 in KV and the next write tries again.

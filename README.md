@@ -80,13 +80,13 @@ No build step and nothing to install:
 npm run serve      # http://localhost:8781
 ```
 
-`serve.py` sends no-cache headers, so a reload always shows your latest edit.
+`tools/serve.py` serves `site/` with no-cache headers, so a reload always shows your latest edit.
 Pass a port if you want a specific one (`npm run serve 9000`); with no argument
 it steps past a busy port rather than failing, which is what lets a second copy
 of the site run alongside the first.
 
-Any static server works just as well — `python3 -m http.server 8000` and open
-`http://localhost:8000`. Opening the files directly with `file://` does not:
+Any static server works just as well — `cd site && python3 -m http.server 8000` and open
+`http://localhost:8000`, run from inside `site/`. Opening the files directly with `file://` does not:
 every editor change is kept in `localStorage`, which browsers restrict on
 `file://` origins, so the dashboard cannot save.
 
@@ -148,29 +148,30 @@ Two things worth knowing:
 
 ## Documentation
 
-- **[FINALSITE.md](FINALSITE.md)** — how the site integrates with Finalsite: the
+- **[FINALSITE.md](docs/FINALSITE.md)** — how the site integrates with Finalsite: the
   identity contract (`WL_CONTEXT`), the **editors-group logic**, and a phased plan
   for hosting, authentication, and content persistence.
-- **[CODE-GUIDE.md](CODE-GUIDE.md)** — a developer's tour of the code: how a
+- **[CODE-GUIDE.md](docs/CODE-GUIDE.md)** — a developer's tour of the code: how a
   page boots, where content comes from, the store pattern, and the things that
   will surprise you.
-- **[CUSTOMIZE.md](CUSTOMIZE.md)** — rebrand the paper for your school (the Brand
+- **[CUSTOMIZE.md](docs/CUSTOMIZE.md)** — rebrand the paper for your school (the Brand
   design tab, or editing `config.js`).
-- **[INTEGRATION.md](INTEGRATION.md)** — for the host platform's administrator:
+- **[INTEGRATION.md](docs/INTEGRATION.md)** — for the host platform's administrator:
   where content lives, the identity hook, and a setup checklist.
 
 ## Project layout
 
 | Path | Purpose |
 |------|---------|
-| `*.html` | Pages — public surfaces plus the `editor*.html` dashboard |
-| `config.js` | Brand config (`WL_CONFIG`); the only per-school file |
+| `site/` | Everything that ships: pages, scripts, styles, fonts, media, generated story pages |
+| `site/*.html` | Pages — public surfaces plus the `editor*.html` dashboard |
+| `site/config.js` | Brand config (`WL_CONFIG`); the only per-school file |
 | `articles.js`, `writers.js`, `teams.js`, … | Content sources (`window.WL_*`) |
 | `*-store.js` | CRUD / data layer — the seam for server-backed persistence |
 | `auth.js` | Identity adapter (`window.WLAuth`; reads `WL_CONTEXT`) |
 | `nav.js`, `brand.js`, `section.js`, … | Shared rendering |
-| `stories/` | Generated — one real page per story, so links preview. Do not edit by hand |
-| `story-url.js` | Where a story lives; holds the generated list of pages |
+| `site/stories/` | Generated — one real page per story, so links preview. Do not edit by hand |
+| `site/story-url.js` | Where a story lives; holds the generated list of pages |
 
 ## Licence
 

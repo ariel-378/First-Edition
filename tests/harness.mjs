@@ -12,7 +12,7 @@ import jsdomPkg from "jsdom";
 
 const { JSDOM, VirtualConsole } = jsdomPkg;
 
-export const SITE = path.resolve(fileURLToPath(import.meta.url), "../..");
+export const SITE = path.resolve(fileURLToPath(import.meta.url), "../../site");
 
 /** Read a page and inline its same-directory scripts so jsdom can run them. */
 export function inlineScripts(file) {

@@ -14,7 +14,7 @@ without touching code.
 
 - **Vanilla HTML, CSS and JavaScript.** No framework, no build step, no server.
 - **No runtime dependencies.** Nothing to install, patch, or keep up to date.
-- **Deploys as static files.** Upload the directory; that is the whole deploy.
+- **Deploys as static files.** Upload the contents of `site/`; that is the whole deploy.
 
 There are two repositories with identical code:
 
@@ -164,7 +164,7 @@ refuses to enable preview when hosted.
 
 ## Setup checklist
 
-- [ ] Upload the site directory as static files
+- [ ] Upload the contents of `site/` as static files
 - [ ] Inject `WL_CONTEXT` before the site's scripts (above)
 - [ ] Map the school's editor role to `role: "editor"`
 - [ ] Set the page audience for who may read the paper

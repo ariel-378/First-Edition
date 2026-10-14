@@ -1,8 +1,8 @@
-# Local demo server. Serves this folder with no-cache headers, so the browser
+# Local demo server. Serves ../site with no-cache headers, so the browser
 # always shows your latest edits (no hard-refresh needed).
 #
-#   python3 serve.py           # http://localhost:8781
-#   python3 serve.py 9000      # a port you pick
+#   python3 tools/serve.py     # http://localhost:8781
+#   python3 tools/serve.py 9000 # a port you pick
 #   npm run serve              # the same thing
 #
 # If the default port is busy — usually another copy of this site already
@@ -17,7 +17,7 @@ import sys
 
 DEFAULT_PORT = 8781
 PORTS_TO_TRY = 20
-DIRECTORY = os.path.dirname(os.path.abspath(__file__))
+DIRECTORY = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "site"))
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):

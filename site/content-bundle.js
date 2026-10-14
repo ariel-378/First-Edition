@@ -225,7 +225,7 @@ window.WLBundle = (function () {
         : "<b>Your edits are in this browser only.</b> <b>Download to publish</b> is what puts " +
           "them on the site; the bundle is a backup and a way to hand drafts to someone. " +
           "A publish date sets <em>when</em> a piece appears once readers have it — it does not " +
-          'send it anywhere. <a href="setup/worker/README.md">Shared editing</a> removes this step.';
+          'send it anywhere. <a href="https://github.com/ariel-378/First-Edition/blob/main/setup/worker/README.md">Shared editing</a> removes this step.';
     }
     renderLede();
     document.addEventListener("wl-sync-change", renderLede);
