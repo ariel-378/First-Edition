@@ -24,7 +24,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
-const SITE = path.resolve(fileURLToPath(import.meta.url), "../..");
+const SITE = path.resolve(fileURLToPath(import.meta.url), "../../site");
 export const OUT_DIR = "stories";
 
 /** Read a `window.WL_*` data file the way a browser would. */

@@ -21,7 +21,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
-const SITE = path.resolve(fileURLToPath(import.meta.url), "../..");
+const SITE = path.resolve(fileURLToPath(import.meta.url), "../../site");
 
 // What the pages ship with before anyone stamps them.
 export const PLACEHOLDER_NAME = "The Student Times";

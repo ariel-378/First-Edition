@@ -12,7 +12,7 @@ ALLOWED_ORIGIN = "*"
 # published-content.js it commits there.
 GITHUB_REPO = ""
 GITHUB_BRANCH = "main"
-GITHUB_PATH = "published-content.js"
+GITHUB_PATH = "site/published-content.js"
 
 # Storage for the paper's content.
 [[kv_namespaces]]

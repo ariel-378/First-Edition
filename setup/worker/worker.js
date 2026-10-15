@@ -130,7 +130,7 @@ function publishedSource(stored) {
 }
 
 async function commitPublished(stored, env) {
-  const path = env.GITHUB_PATH || "published-content.js";
+  const path = env.GITHUB_PATH || "site/published-content.js";
   const branch = env.GITHUB_BRANCH || "main";
   const api = `https://api.github.com/repos/${env.GITHUB_REPO}/contents/${path}`;
   const headers = {

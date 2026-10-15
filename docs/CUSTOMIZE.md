@@ -160,7 +160,7 @@ says.
 
 The **Subscribe** button at the top of every page collects an email address
 into a **Google Sheet**, through a small Google
-Apps Script. See **[setup/README.md](setup/README.md)** for the one-time setup
+Apps Script. See **[setup/README.md](../setup/README.md)** for the one-time setup
 of the Sheet — about 10 minutes.
 
 Manage it from the **Newsletter signups** panel at the bottom of the Brand
@@ -230,7 +230,7 @@ editing and neither is true:
 
 It runs on a Cloudflare Worker you deploy once; the free tier is far more than a
 school paper needs. Setup takes about twenty minutes:
-**[setup/worker/README.md](setup/worker/README.md)**. Then fill in `config.js`:
+**[setup/worker/README.md](../setup/worker/README.md)**. Then fill in `config.js`:
 
 ```js
 sync: {
