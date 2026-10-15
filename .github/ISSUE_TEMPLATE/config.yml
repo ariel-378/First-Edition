@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions
+    url: https://github.com/ariel-378/First-Edition/discussions
+    about: Not sure if it's a bug? Ask in Discussions.
+  - name: Security reports
+    url: https://github.com/ariel-378/First-Edition/security/advisories/new
+    about: Report a vulnerability privately, not as a public issue.

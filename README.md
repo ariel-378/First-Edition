@@ -97,9 +97,9 @@ and every editorial decision are mine.
 
 ## Contributing, security, licence
 
-Contributions are welcome; keep the no-build-step, no-dependency rule and add a
-test for anything that touches a page. Security reports go by email rather
-than a public issue; the address is in the security policy once published.
+Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md) and the
+[code of conduct](CODE_OF_CONDUCT.md). Security reports go through GitHub's
+private reporting, not a public issue: see [SECURITY.md](SECURITY.md).
 
 [MIT](LICENSE) — take it, rename it, run your own paper on it. No attribution
 required in the site itself, though a line in your colophon is welcome. The
