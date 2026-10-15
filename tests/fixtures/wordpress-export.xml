@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0"
+	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:wp="http://wordpress.org/export/1.2/"
+>
+<channel>
+	<title>The Riverside Register</title>
+	<link>https://riversideregister.example</link>
+	<description>Student newspaper of Riverside High School</description>
+	<wp:wxr_version>1.2</wp:wxr_version>
+	<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[jlee]]></wp:author_login><wp:author_email><![CDATA[jlee@example.org]]></wp:author_email><wp:author_display_name><![CDATA[Jordan Lee]]></wp:author_display_name></wp:author>
+	<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[mpatel]]></wp:author_login><wp:author_email><![CDATA[mpatel@example.org]]></wp:author_email><wp:author_display_name><![CDATA[Maya Patel]]></wp:author_display_name></wp:author>
+	<wp:category><wp:term_id>3</wp:term_id><wp:category_nicename><![CDATA[news]]></wp:category_nicename><wp:cat_name><![CDATA[News]]></wp:cat_name></wp:category>
+
+	<item>
+		<title>Board Approves New Turf Field &amp; Track</title>
+		<link>https://riversideregister.example/2026/04/turf-field/</link>
+		<pubDate>Tue, 14 Apr 2026 15:02:11 +0000</pubDate>
+		<dc:creator><![CDATA[jlee]]></dc:creator>
+		<description></description>
+		<content:encoded><![CDATA[The school board voted 5&#8211;2 on Monday to replace the grass field.
+
+Construction starts in June &amp; finishes before the fall season, athletic director Sam Okafor said.
+
+<a href="https://example.org/minutes">The minutes</a> are posted online.]]></content:encoded>
+		<excerpt:encoded><![CDATA[A 5&#8211;2 vote ends a three-year debate.]]></excerpt:encoded>
+		<wp:post_id>101</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-14 11:02:11]]></wp:post_date>
+		<wp:post_name><![CDATA[turf-field]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<category domain="category" nicename="news"><![CDATA[News]]></category>
+		<category domain="post_tag" nicename="athletics"><![CDATA[Athletics]]></category>
+		<category domain="post_tag" nicename="school-board"><![CDATA[School Board]]></category>
+		<wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[300]]></wp:meta_value></wp:postmeta>
+	</item>
+
+	<item>
+		<title>We Need Later Start Times, Not Louder Alarms</title>
+		<link>https://riversideregister.example/2026/03/later-start/</link>
+		<dc:creator><![CDATA[mpatel]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Every study says the same thing: teenagers&#8217; bodies are not built for a 7:30 bell.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>What the data shows</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>First-period absences run <strong>almost double</strong> second period.<br>That is the number that should move the board.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>102</wp:post_id>
+		<wp:post_date><![CDATA[2026-03-02 08:00:00]]></wp:post_date>
+		<wp:post_name><![CDATA[later-start]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<category domain="category" nicename="opinion"><![CDATA[Opinion]]></category>
+	</item>
+
+	<item>
+		<title>Spring Musical Review: &#8220;Into the Woods&#8221;</title>
+		<dc:creator><![CDATA[ghost]]></dc:creator>
+		<content:encoded><![CDATA[<p>The orchestra carried the second act.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>103</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-20 17:45:00]]></wp:post_date>
+		<wp:post_name><![CDATA[]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+		<category domain="category" nicename="arts"><![CDATA[Arts]]></category>
+	</item>
+
+	<item>
+		<title>Unfinished Draft About the Cafeteria</title>
+		<dc:creator><![CDATA[jlee]]></dc:creator>
+		<content:encoded><![CDATA[<p>Not ready.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>104</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-20 09:00:00]]></wp:post_date>
+		<wp:post_name><![CDATA[cafeteria-draft]]></wp:post_name>
+		<wp:status><![CDATA[draft]]></wp:status>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<category domain="category" nicename="news"><![CDATA[News]]></category>
+	</item>
+
+	<item>
+		<title>About Us</title>
+		<dc:creator><![CDATA[jlee]]></dc:creator>
+		<content:encoded><![CDATA[<p>The Register has published since 1961.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>105</wp:post_id>
+		<wp:post_date><![CDATA[2025-09-01 09:00:00]]></wp:post_date>
+		<wp:post_name><![CDATA[about-us]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+	</item>
+
+	<item>
+		<title>turf-field-rendering</title>
+		<dc:creator><![CDATA[jlee]]></dc:creator>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>300</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-14 10:58:00]]></wp:post_date>
+		<wp:post_name><![CDATA[turf-field-rendering]]></wp:post_name>
+		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:attachment_url><![CDATA[https://riversideregister.example/wp-content/uploads/2026/04/turf-field-rendering.jpg]]></wp:attachment_url>
+	</item>
+</channel>
+</rss>

@@ -51,7 +51,7 @@
   function cardHtml(a) {
     return `
       <article class="sec-card">
-        <a class="sec-card-media" href="${href(a)}">${thumbHtml(a)}</a>
+        <a class="sec-card-media" href="${href(a)}" aria-hidden="true" tabindex="-1">${thumbHtml(a)}</a>
         ${eyebrow(a)}
         <h3><a href="${href(a)}">${escapeHtml(a.title)}</a></h3>
         ${deckHtml(a)}

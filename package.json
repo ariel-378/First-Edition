@@ -7,7 +7,8 @@
     "test": "node tests/run.mjs",
     "serve": "python3 tools/serve.py",
     "brand": "node setup/stamp-brand.mjs && node setup/build-stories.mjs",
-    "stories": "node setup/build-stories.mjs"
+    "stories": "node setup/build-stories.mjs",
+    "import": "node setup/import-wxr.mjs"
   },
   "devDependencies": {
     "jsdom": "^26.0.0"

@@ -29,7 +29,7 @@ free or inside the website platform your school already pays for.
 
 **<https://ariel-378.github.io/First-Edition/>** runs with no host platform
 behind it, so you can open the editor yourself: click **Editor preview** in the
-account bar. Your changes stay in your own browser; **Reset demo data** puts
+account bar. Your changes stay in your own browser; **Reset all demo data** puts
 everything back.
 
 ## What's in the box
@@ -47,6 +47,10 @@ everything back.
 - **Host-ready** — designed to sit behind a school platform such as Finalsite,
   which provides login and decides who is an editor. Optional shared editing
   for papers running on their own.
+- **Bring your archive** — a WordPress or SNO export imports in one command,
+  stories, bylines, dates, tags and lead photos included.
+
+![Writing a story in the editor and seeing it on the home page](docs/images/editor.gif)
 
 ## Deploy
 
@@ -69,7 +73,7 @@ npm ci
 npm test
 ```
 
-1046 checks across 24 suites: every page loads clean, every editor control is
+1093 checks across 25 suites: every page loads clean, every editor control is
 pressed without throwing, and content added in the editor reaches the reader
 pages. See [tests/README.md](tests/README.md).
 

@@ -34,14 +34,15 @@ persist only in your browser's `localStorage`.
 
 Inside the editor dashboard, the toolbar has three buttons:
 
-- **+ New Article** — create a new article.
-- **Reset all changes** — discard your article edits and restore the original
+- **+ Add section** — create a new section. Each section has its own
+  **+ Add new content** button for a new article.
+- **Reset all article changes** — discard your article edits and restore the original
   articles.
-- **Reset demo data** — clear **all** saved changes in this browser (articles,
+- **Reset all demo data** — clear **all** saved changes in this browser (articles,
   sections, brand, layout, videos, sports, etc.) and restore the shipped content.
 
 Because editor changes are saved to `localStorage` and override the shipped
-files, if the demo ever shows stale content, click **Reset demo data** (or open
+files, if the demo ever shows stale content, click **Reset all demo data** (or open
 the site in a private window) to get back to the shipped version.
 
 ## Sample content
@@ -64,7 +65,7 @@ npm install   # once — pulls jsdom, the only dependency
 npm test
 ```
 
-1046 checks across 24 suites: every page loads clean, every editor control is
+1093 checks across 25 suites: every page loads clean, every editor control is
 pressed without throwing, and content added in the editor reaches the reader
 pages. The suites load real pages in jsdom and drive them the way an editor
 would, clicking buttons and typing into fields rather than calling internals.
@@ -109,6 +110,34 @@ Two things worth knowing:
 - **Scheduled stories are not generated.** A story with a future publish time
   gets no page until that time, so an embargoed headline is never sitting in a
   public file early.
+
+## Importing an archive from WordPress
+
+"We'd lose our archive" is the objection that ends most switches. WordPress,
+and SNO sites, which are WordPress underneath, export the whole archive from
+**Tools → Export** as one XML file. The importer turns that file into a content
+bundle the editor loads in one click:
+
+```bash
+npm run import -- export.xml                       # writes content-bundle.json
+npm run import -- export.xml --map "Campus Life=Features" --map "Reviews=Style"
+npm run import -- export.xml --no-new-sections --default-section News
+```
+
+Then open the editor's **Content** tab, click **Load bundle…**, pick the file,
+and publish as usual.
+
+What comes across: every published post with its headline, standfirst (the
+excerpt), byline, date, body paragraphs, tags, and the featured image as a link
+to wherever WordPress hosts it. Categories become sections: one that matches a
+section the paper already has (including *Opinion* for Op-Ed) is used as-is,
+and the rest are created, or sent to a default section with
+`--no-new-sections`. Drafts, pages, menus and media-library entries are
+skipped and counted in the report. Images inside the body text are not
+carried over; the paragraphs are.
+
+The importer has no dependencies and reads the section list from
+`site/sections-store.js` itself, so it cannot drift from the editor.
 
 ## Project layout
 
