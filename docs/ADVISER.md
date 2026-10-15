@@ -7,7 +7,7 @@ page. If you want to see the thing itself first, open the live demo:
 **https://ariel-378.github.io/First-Edition/**
 
 Click **Editor preview** at the top right to try the editor. Whatever you
-change there stays in your own browser and nobody else sees it; **Reset demo
+change there stays in your own browser and nobody else sees it; **Reset all demo
 data** in the dashboard puts everything back.
 
 ## What it is
@@ -92,7 +92,7 @@ choose **Add section**. The new section appears in the navigation, gets its own
 page, and can be chosen to fill a slot on the home page. Sections can be
 renamed, reordered, and removed from the same place.
 
-**To write a story,** click **+ New Article**, choose its section, and write.
+**To write a story,** click **+ Add new content** under the section it belongs in, and write.
 Every story has a publish date and time, so an edition can be prepared during
 the week and go out on Friday morning on its own. The **Schedule** tab shows
 everything that is planned, in the order it will appear.

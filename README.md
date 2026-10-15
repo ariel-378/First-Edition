@@ -29,7 +29,7 @@ free or inside the website platform your school already pays for.
 
 **<https://ariel-378.github.io/First-Edition/>** runs with no host platform
 behind it, so you can open the editor yourself: click **Editor preview** in the
-account bar. Your changes stay in your own browser; **Reset demo data** puts
+account bar. Your changes stay in your own browser; **Reset all demo data** puts
 everything back.
 
 ## What's in the box
@@ -49,6 +49,8 @@ everything back.
   for papers running on their own.
 - **Bring your archive** — a WordPress or SNO export imports in one command,
   stories, bylines, dates, tags and lead photos included.
+
+![Writing a story in the editor and seeing it on the home page](docs/images/editor.gif)
 
 ## Deploy
 
