@@ -1,70 +1,72 @@
 # First Edition
 
-A framework-free (vanilla HTML/CSS/JS) platform for a student newspaper — section
-pages, articles, sports, videos, puzzles & games, search, and an in-app
-**editor dashboard**. No build step, no dependencies. Take it, rename it, and
-run your school's paper on it.
+A free, open-source website for student newspapers. Plain HTML, CSS and
+JavaScript, no build step, no dependencies, editor dashboard built in.
 
-**▶ Live demo: <https://ariel-378.github.io/First-Edition/>**
+[![Tests](https://github.com/ariel-378/First-Edition/actions/workflows/tests.yml/badge.svg)](https://github.com/ariel-378/First-Edition/actions/workflows/tests.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Live demo](https://img.shields.io/badge/Live_demo-ariel--378.github.io-blue)](https://ariel-378.github.io/First-Edition/)
 
-The demo runs in standalone mode with no host platform behind it, so you can
-open the editor yourself: use the **"Editor preview"** link in the account bar,
-top right. Changes you make are saved to your own browser and visible only to
-you — click **Reset demo data** in the dashboard to put it back.
+![First Edition home page](docs/images/home.png)
 
-## Highlights
+School newspapers mostly live on paid hosted platforms (typically a few hundred
+dollars a year plus a setup fee) or on self-managed WordPress installs that
+break when a plugin updates. First Edition is the third option: a complete
+newspaper site with an editor dashboard, in plain HTML, CSS and JavaScript,
+with no build step and no dependencies to rot. It runs on GitHub Pages for
+free or inside the website platform your school already pays for.
 
-- **Editor dashboard** — create and edit articles, and manage staff, sports,
-  videos, and the puzzles & games pages.
-- **Editor-managed sections** — add, rename, reorder, and remove sections, and
-  choose which section fills each home-page slot. The nav, section pages, home
-  page, and search all update automatically.
-- **Rearrange a page in place** — signed in as an editor, any page built from
-  blocks gets an *Edit layout* toggle: drag them into new rows and columns, or
-  move them with the keyboard. Article pages, the video index, staff, search,
-  tags, team pages and the centerspread all included, each keeping its own
-  layout. The home page is arranged differently — by choosing which section
-  fills each slot, above.
-- **Tags, if you want them** — editors keep a list of tags and switch the whole
-  system on or off. Tagged articles get a tag page, and **search finds them**:
-  a reader looking for *music* gets every article filed under Music, whether or
-  not the word appears in the text, with the matching tag shown on the result so
-  it is clear why it came up. Switched off, tags are hidden everywhere,
-  search included — not deleted.
-- **Plan an edition ahead** — every piece of content takes a publish date and
-  time and stays invisible to readers until it arrives: articles, poems, art,
-  videos, custom features and games alike. A **Schedule** tab gathers the whole
-  plan into one list, in the order it goes out, grouped by day, with *Publish
-  now* on any row when the plan changes.
-- **Shared editing (optional)** — point `config.js` at a small store the school
-  runs itself and every editor sees the same content, including what is
-  scheduled, with no downloading or committing by hand. Off by default; see
-  [setup/worker/README.md](setup/worker/README.md).
-- **Newsletter signups** — a Subscribe button collecting an email address, and
-  nothing else, into a Google Sheet the school owns.
-- **Brand config** — one file (`config.js`) sets the masthead, school, colors,
-  logo, and footer across every page. Editors can also upload a masthead
-  flourish and a tab icon from the dashboard and export a finished `config.js`.
-- **Host-ready auth** — designed to sit behind Finalsite, which provides login and
-  decides who is an editor.
+## Quick start
 
-## Sample content
+1. Click **Use this template** at the top of this page and create your repo.
+2. In your new repo: **Settings → Pages → Source: GitHub Actions.** The included
+   workflow deploys `site/` on every push. Your paper is live at
+   `https://<you>.github.io/<repo>/` in about a minute.
+3. Edit `site/config.js` (paper name, school, colors) — or open the site, click
+   **Editor preview**, use the **Brand design** tab, and export `config.js`.
 
-The repo ships with a demo newsroom so a fresh copy looks like a working paper
-rather than an empty page: eleven stories, a fourteen-person masthead, three
-teams with brackets, two videos, and flat SVG illustrations standing in for
-photos.
+## Live demo
 
-**All of it is invented** — East High School, The Wildcat Times, every byline,
-every staff member, every person quoted, every score. None of it refers to a
-real school or a real person. To start clean, empty the objects in
-`articles.js`, `staff-data.js`, `teams.js`, and `videos.js`; each file says so
-at the top.
+**<https://ariel-378.github.io/First-Edition/>** runs with no host platform
+behind it, so you can open the editor yourself: click **Editor preview** in the
+account bar. Your changes stay in your own browser; **Reset demo data** puts
+everything back.
+
+## What's in the box
+
+- **Editor dashboard** — articles, sections, staff, sports with brackets,
+  videos, puzzles & games, all without touching code.
+- **Editor-managed sections** — add, rename and reorder sections; nav, section
+  pages, home page and search follow automatically.
+- **Plan an edition ahead** — every piece of content takes a publish time and
+  stays invisible until it arrives; a Schedule tab shows the whole plan.
+- **Links that preview** — every published story is also a real static page,
+  so it previews with headline and photo in iMessage, Slack and social posts.
+- **Brand in one file** — `site/config.js` sets the masthead, school, colors,
+  logo and footer everywhere; the dashboard can export it for you.
+- **Host-ready** — designed to sit behind a school platform such as Finalsite,
+  which provides login and decides who is an editor. Optional shared editing
+  for papers running on their own.
+
+## Deploy
+
+- **GitHub Pages** — built in; see Quick start.
+- **Any static host** — upload the contents of `site/`. That is the whole deploy.
+- **Inside your school's platform** — see [docs/FINALSITE.md](docs/FINALSITE.md)
+  and [docs/INTEGRATION.md](docs/INTEGRATION.md).
+
+## Who uses it
+
+<!-- ARIEL: this section must be literally true at all times. Template from the
+handoff: "Woodley Leaves, Maret School (Washington, DC) — approved by the
+school; Finalsite deployment in progress." Update the moment it goes live. -->
+
+_To be written by the author before this file is merged._
 
 ## Tests
 
 ```bash
-npm install   # once — pulls jsdom, the only dependency
+npm ci
 npm test
 ```
 
@@ -72,112 +74,36 @@ npm test
 pressed without throwing, and content added in the editor reaches the reader
 pages. See [tests/README.md](tests/README.md).
 
-## Run it locally
-
-No build step and nothing to install:
-
-```bash
-npm run serve      # http://localhost:8781
-```
-
-`tools/serve.py` serves `site/` with no-cache headers, so a reload always shows your latest edit.
-Pass a port if you want a specific one (`npm run serve 9000`); with no argument
-it steps past a busy port rather than failing, which is what lets a second copy
-of the site run alongside the first.
-
-Any static server works just as well — `cd site && python3 -m http.server 8000` and open
-`http://localhost:8000`, run from inside `site/`. Opening the files directly with `file://` does not:
-every editor change is kept in `localStorage`, which browsers restrict on
-`file://` origins, so the dashboard cannot save.
-
-With no host platform present, the site runs in **demo mode** — use the
-**"Editor preview"** link in the account bar to open the dashboard. Editor changes
-persist only in your browser's `localStorage`.
-
-### Dashboard controls
-
-Inside the editor dashboard, the toolbar has three buttons:
-
-- **+ New Article** — create a new article.
-- **Reset all changes** — discard your article edits and restore the original articles.
-- **Reset demo data** — clear **all** saved changes in this browser (articles,
-  sections, brand, layout, videos, sports, etc.) and restore the shipped content.
-
-Because editor changes are saved to `localStorage` and override the shipped files,
-if the demo ever shows stale content, click **Reset demo data** (or open the site
-in a private window) to get back to the shipped version.
-
-## Link previews
-
-When a story is pasted into a group chat, iMessage, Slack or a social post, the
-preview is built by a machine that fetches the page and reads its markup. **It
-does not run JavaScript.** A page that fills in its own headline after loading
-previews as the name of the paper and nothing else — which, for a school paper
-whose readers share stories in group chats, is most of the distribution.
-
-So every published story is also written out as a real page:
-
-```
-stories/<id>.html
-```
-
-with its headline, description and photo already in the markup. `article.html`
-still works — old links, and the editor previewing a draft, both go through it.
-
-**Regenerating them:**
-
-```
-npm run stories      # just the story pages
-npm run brand        # re-stamps the paper name, then regenerates
-```
-
-Both are run for you by `.github/workflows/stories.yml` after every publish, so
-in normal use nobody has to remember. A story published in the last minute or
-two may briefly link to `article.html?id=…` instead — that page works, it just
-previews poorly, and the link corrects itself once the workflow has run.
-
-Two things worth knowing:
-
-- **Set `siteUrl` in `config.js`** to the address the paper is published at.
-  Without it the photo in a preview is a relative path, which most previews
-  cannot resolve. Headlines and descriptions work either way, and
-  `npm run stories` tells you when it is missing.
-- **Scheduled stories are not generated.** A story with a future publish time
-  gets no page until that time, so an embargoed headline is never sitting in a
-  public file early.
-
 ## Documentation
 
-- **[FINALSITE.md](docs/FINALSITE.md)** — how the site integrates with Finalsite: the
-  identity contract (`WL_CONTEXT`), the **editors-group logic**, and a phased plan
-  for hosting, authentication, and content persistence.
-- **[CODE-GUIDE.md](docs/CODE-GUIDE.md)** — a developer's tour of the code: how a
-  page boots, where content comes from, the store pattern, and the things that
-  will surprise you.
-- **[CUSTOMIZE.md](docs/CUSTOMIZE.md)** — rebrand the paper for your school (the Brand
-  design tab, or editing `config.js`).
-- **[INTEGRATION.md](docs/INTEGRATION.md)** — for the host platform's administrator:
-  where content lives, the identity hook, and a setup checklist.
+- [docs/ADVISER.md](docs/ADVISER.md) — for the journalism teacher: what it is,
+  what it costs, what you need. No code.
+- [docs/DEVELOPER.md](docs/DEVELOPER.md) — run it locally, project layout, link
+  previews, why there is no framework.
+- [docs/FINALSITE.md](docs/FINALSITE.md) — the identity contract and a phased
+  plan for running inside Finalsite.
+- [docs/CUSTOMIZE.md](docs/CUSTOMIZE.md) — rebrand the paper for your school.
+- [docs/INTEGRATION.md](docs/INTEGRATION.md) — for the host platform's
+  administrator: where content lives and a setup checklist.
+- [docs/CODE-GUIDE.md](docs/CODE-GUIDE.md) — a developer's tour of the code.
 
-## Project layout
+## How this was built
 
-| Path | Purpose |
-|------|---------|
-| `site/` | Everything that ships: pages, scripts, styles, fonts, media, generated story pages |
-| `site/*.html` | Pages — public surfaces plus the `editor*.html` dashboard |
-| `site/config.js` | Brand config (`WL_CONFIG`); the only per-school file |
-| `articles.js`, `writers.js`, `teams.js`, … | Content sources (`window.WL_*`) |
-| `*-store.js` | CRUD / data layer — the seam for server-backed persistence |
-| `auth.js` | Identity adapter (`window.WLAuth`; reads `WL_CONTEXT`) |
-| `nav.js`, `brand.js`, `section.js`, … | Shared rendering |
-| `site/stories/` | Generated — one real page per story, so links preview. Do not edit by hand |
-| `site/story-url.js` | Where a story lives; holds the generated list of pages |
+<!-- ARIEL: write this in your own words. It must match the resume and what
+you would say in an interview. Shape from the handoff: when you built it, what
+you started from, how you used Claude Code and on roughly what fraction of
+commits, and what is yours (architecture, editor, Finalsite integration, every
+editorial decision). Only claims you can stand behind. -->
 
-## Licence
+_To be written by the author before this file is merged._
+
+## Contributing, security, licence
+
+Contributions are welcome; keep the no-build-step, no-dependency rule and add a
+test for anything that touches a page. Security reports go by email rather
+than a public issue; the address is in the security policy once published.
 
 [MIT](LICENSE) — take it, rename it, run your own paper on it. No attribution
-required in the site itself, though a line in your colophon is welcome.
-
-The sample content is invented (East High School, The Wildcat Times, every
-byline and score) and is covered by the same licence. Real student journalism
-lives in each school's own deployment, not here.
+required in the site itself, though a line in your colophon is welcome. The
+sample content (East High School, The Wildcat Times, every byline and score)
+is invented and covered by the same licence.
