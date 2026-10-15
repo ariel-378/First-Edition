@@ -57,11 +57,10 @@ everything back.
 
 ## Who uses it
 
-<!-- ARIEL: this section must be literally true at all times. Template from the
-handoff: "Woodley Leaves, Maret School (Washington, DC) — approved by the
-school; Finalsite deployment in progress." Update the moment it goes live. -->
+- **The Woodley Leaves**, Maret School (Washington, DC) — approved by the
+  school; Finalsite deployment in progress.
 
-_To be written by the author before this file is merged._
+Running First Edition at your school? Open an issue and it will be added here.
 
 ## Tests
 
@@ -89,13 +88,12 @@ pages. See [tests/README.md](tests/README.md).
 
 ## How this was built
 
-<!-- ARIEL: write this in your own words. It must match the resume and what
-you would say in an interview. Shape from the handoff: when you built it, what
-you started from, how you used Claude Code and on roughly what fraction of
-commits, and what is yours (architecture, editor, Finalsite integration, every
-editorial decision). Only claims you can stand behind. -->
-
-_To be written by the author before this file is merged._
+I designed and wrote First Edition starting in July 2026, while rebuilding my
+school paper's website. I used Claude Code as a pair-programmer on about two
+in five commits, across features, fixes and documentation; the commit history
+records which ones. The architecture (no framework, no build step, a store
+layer that a host platform can back), the editor, the Finalsite integration,
+and every editorial decision are mine.
 
 ## Contributing, security, licence
 
