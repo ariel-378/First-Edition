@@ -3,9 +3,9 @@
 All notable changes to First Edition are listed here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## [Unreleased]
+## [1.0.0] — 2026-10-14
 
-First public release, in preparation.
+First public release.
 
 - Editor dashboard: articles, sections, staff, sports, videos, puzzles & games,
   schedule
