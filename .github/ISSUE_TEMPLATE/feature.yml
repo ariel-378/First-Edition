@@ -1,0 +1,26 @@
+name: Feature request
+description: Something the paper needs that First Edition doesn't do
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What you're trying to do and what gets in the way. Describe the problem, not the solution; the right fix is often different from the first idea.
+    validations:
+      required: true
+  - type: dropdown
+    id: who
+    attributes:
+      label: Who it's for
+      options:
+        - Readers
+        - Editors
+        - The adviser
+        - Whoever manages the site
+    validations:
+      required: true
+  - type: textarea
+    id: today
+    attributes:
+      label: How you handle it today

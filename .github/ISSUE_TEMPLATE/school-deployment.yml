@@ -1,0 +1,58 @@
+name: School deployment
+description: You're setting up First Edition for your school and want a hand
+labels: ["school deployment"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for giving First Edition a try. Fill in what you can; none of it
+        has to be final. Schools setting up for the first time are welcome
+        to ask for hands-on help.
+  - type: input
+    id: school
+    attributes:
+      label: School
+      placeholder: Riverside High School, Portland, OR
+    validations:
+      required: true
+  - type: input
+    id: paper
+    attributes:
+      label: Paper name
+      placeholder: The Riverside Register
+    validations:
+      required: true
+  - type: dropdown
+    id: hosting
+    attributes:
+      label: Where will it run?
+      options:
+        - GitHub Pages
+        - Our school's website platform (Finalsite)
+        - Our school's website platform (other)
+        - Another static host
+        - Not sure yet
+    validations:
+      required: true
+  - type: dropdown
+    id: archive
+    attributes:
+      label: Where does your archive live today?
+      options:
+        - WordPress / SNO
+        - Another platform
+        - Print only, no online archive
+        - We're a new paper
+    validations:
+      required: true
+  - type: textarea
+    id: contact
+    attributes:
+      label: Who to talk to
+      description: Adviser or student editor, and how you'd like to be reached. Don't put student personal details here; GitHub issues are public.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
