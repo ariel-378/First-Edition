@@ -2030,7 +2030,7 @@ footer a:hover { opacity: 0.85; }
   font-weight: 400 !important;
   font-style: italic;
   color: var(--muted) !important;
-  opacity: 0.8;
+  opacity: 1;
 }
 .wl-demo-link:hover,
 .wl-demo-link:focus-visible { opacity: 1; color: var(--accent) !important; }

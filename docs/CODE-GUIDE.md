@@ -148,7 +148,7 @@ important sentence in this repository.
 ## Tests
 
 ```bash
-npm test              # all 24 suites
+npm test              # all 25 suites
 npm test articles     # one suite
 ```
 

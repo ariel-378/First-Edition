@@ -63,6 +63,15 @@ The sample newsroom that ships with the site, "The Wildcat Times" of "East High
 School," is entirely invented. Clearing it out so your paper starts empty is
 part of the same handoff.
 
+## Bringing your archive
+
+If the paper already lives on WordPress or SNO, the archive is not lost.
+WordPress can export every story as one file, and First Edition includes a
+tool that turns that file into content the editor dashboard loads in one
+click. Headlines, bylines, dates, the text of every published story, its tags,
+and its lead photo all come across. Someone technical runs the tool once; the
+developer guide explains it.
+
 ## How editors sign in
 
 **Running on GitHub Pages on its own,** there is no sign-in. Editors open the

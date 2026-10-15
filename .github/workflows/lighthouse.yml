@@ -1,0 +1,23 @@
+# Accessibility gate. School sites get accessibility complaints; a documented
+# score pre-empts the question. Fails if any audited page scores under 90.
+name: Lighthouse
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - 'site/**'
+      - '.lighthouserc.json'
+      - '.github/workflows/lighthouse.yml'
+  workflow_dispatch:
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: .lighthouserc.json
+          uploadArtifacts: true
