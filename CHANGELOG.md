@@ -5,6 +5,28 @@ All notable changes to First Edition are listed here. The format follows
 
 ## [Unreleased]
 
+## [1.1.0] — 2026-10-18
+
+The fixes promised in Section 9 of the report. Lighthouse on the home, section and
+article pages: accessibility 98 → 100, performance 74 → 98 (mobile) and 100 (desktop),
+cumulative layout shift 0.5–0.9 → 0.
+
+- Layout shift: nothing the reader can see moves after first paint. The cause was not
+  the renderers alone: on a slow connection the browser painted the page before the
+  scripts at the end of `<body>` ran, then the empty section nav filled, the breaking
+  banner (painted visible) disappeared and `<main>` grew, so everything on screen
+  jumped. Now the nav is built the moment its element is parsed (`nav.js`), the banner
+  ships hidden until a story is marked Breaking, `<main>` reserves a viewport of height,
+  the article photo has a fixed 3:2 box, and the five bundled fonts are
+  `font-display: optional` with fallback faces measured to the same widths and
+  preloaded by `brand.js`, so a font that arrives late never re-wraps text
+- Accessibility: headings no longer skip a level on the home rails or the related-story
+  and video blocks; the splash slides off instead of fading, so its white text is never
+  measured on a half-transparent background (the 2.7:1 finding)
+- Lighthouse gate raised to 95 for accessibility, with a new performance gate at 90
+- `docs/CUSTOMIZE.md`: the accent colour must keep 3:1 against white; how the fonts load
+- New `stable` test suite pins each of the fixes above; 1151 checks across 26 suites
+
 ## [1.0.1] — 2026-10-18 — DOI: https://doi.org/10.5281/zenodo.23445562
 
 The release described and measured in the report (commit `98dedf5` plus citation metadata;

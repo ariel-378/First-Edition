@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use First Edition, please cite it using the metadata in this file."
 type: software
 title: "First Edition: a zero-build publishing platform for student newspapers"
-version: 1.0.1
-doi: 10.5281/zenodo.23445562
+version: 1.1.0
+doi: 10.5281/zenodo.23445561
 date-released: 2026-10-18
 license: MIT
 repository-code: "https://github.com/ariel-378/First-Edition"
@@ -18,7 +18,7 @@ abstract: >-
   dependencies. It runs on GitHub Pages or inside a school's existing website platform,
   which supplies sign-in and decides who is an editor. Every published story is also
   emitted as a static page so links preview in group chats; a WordPress or SNO archive
-  imports in one command; 1,093 automated checks in 25 jsdom suites drive the real pages.
+  imports in one command; 1,151 automated checks in 26 jsdom suites drive the real pages.
 keywords:
   - student journalism
   - scholastic press
