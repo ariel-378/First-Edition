@@ -5,7 +5,7 @@ All notable changes to First Edition are listed here. The format follows
 
 ## [Unreleased]
 
-## [1.1.0] — 2026-10-18
+## [1.1.0] — 2026-10-18 — DOI: https://doi.org/10.5281/zenodo.23456010
 
 The fixes promised in Section 9 of the report. Lighthouse on the home, section and
 article pages: accessibility 98 → 100, performance 74 → 98 (mobile) and 100 (desktop),

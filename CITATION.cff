@@ -3,7 +3,7 @@ message: "If you use First Edition, please cite it using the metadata in this fi
 type: software
 title: "First Edition: a zero-build publishing platform for student newspapers"
 version: 1.1.0
-doi: 10.5281/zenodo.23445561
+doi: 10.5281/zenodo.23456010
 date-released: 2026-10-18
 license: MIT
 repository-code: "https://github.com/ariel-378/First-Edition"
