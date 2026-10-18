@@ -73,7 +73,7 @@ npm ci
 npm test
 ```
 
-1093 checks across 25 suites: every page loads clean, every editor control is
+1151 checks across 26 suites: every page loads clean, every editor control is
 pressed without throwing, and content added in the editor reaches the reader
 pages. See [tests/README.md](tests/README.md).
 

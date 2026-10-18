@@ -1,5 +1,7 @@
-# Accessibility gate. School sites get accessibility complaints; a documented
-# score pre-empts the question. Fails if any audited page scores under 90.
+# Accessibility and performance gate. School sites get accessibility
+# complaints; a documented score pre-empts the question. Fails if any audited
+# page scores under 95 for accessibility or under 90 for performance (the
+# performance score is where a layout shift would show up again).
 name: Lighthouse
 
 on:

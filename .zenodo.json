@@ -1,7 +1,7 @@
 {
   "title": "First Edition: a zero-build publishing platform for student newspapers",
   "upload_type": "software",
-  "description": "<p>A free, open-source website and editor dashboard for student newspapers, written in plain HTML, CSS and JavaScript with no build step, no framework and no runtime dependencies. It runs on GitHub Pages or inside a school's existing website platform, which supplies sign-in and decides who is an editor. Every published story is also emitted as a static page so links preview in group chats; a WordPress or SNO archive imports in one command; 1,093 automated checks in 25 jsdom suites drive the real pages.</p>",
+  "description": "<p>A free, open-source website and editor dashboard for student newspapers, written in plain HTML, CSS and JavaScript with no build step, no framework and no runtime dependencies. It runs on GitHub Pages or inside a school's existing website platform, which supplies sign-in and decides who is an editor. Every published story is also emitted as a static page so links preview in group chats; a WordPress or SNO archive imports in one command; 1,151 automated checks in 26 jsdom suites drive the real pages. Version 1.1.0 adds the accessibility and layout-shift fixes promised in the report's Section 9: the reader pages measure zero cumulative layout shift and Lighthouse accessibility 100.</p>",
   "creators": [
     {
       "name": "Pollard, Ariel L.",
@@ -12,7 +12,7 @@
   "license": "MIT",
   "access_right": "open",
   "language": "eng",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "keywords": [
     "student journalism",
     "scholastic press",

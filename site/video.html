@@ -53,7 +53,7 @@
       <p class="video-description" id="v-desc" data-move-key="description" data-move-label="Description"></p>
 
       <section class="related-articles" id="more-videos" data-move-key="more-videos" data-move-label="More video" hidden>
-        <h3 class="related-heading">More video</h3>
+        <h2 class="related-heading">More video</h2>
         <div class="related-grid" id="more-grid"></div>
       </section>
     </div>
@@ -120,7 +120,7 @@
       return `
         <a class="related-card" href="video.html?id=${encodeURIComponent(o.id)}">
           ${thumb}
-          <h4 style="margin-top:8px;">${escapeHtml(o.title)}</h4>
+          <h3 style="margin-top:8px;">${escapeHtml(o.title)}</h3>
           <div class="byline">By ${escapeHtml(o.byline)} · ${escapeHtml(o.date)}</div>
         </a>
       `;

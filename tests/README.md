@@ -22,7 +22,7 @@ passes, that click path genuinely works.
 | `sports` | Teams, brackets, scheduled games, per-block visibility |
 | `content` | Sections, content types, puzzles, poems, art, reveal items, videos |
 | `reader` | Editor changes reaching public pages — and staying off them when hidden or scheduled |
-| `a11y` | Keyboard and screen-reader paths through the core tasks: reading an article, and filing one |
+| `a11y` | Keyboard and screen-reader paths through the core tasks: reading an article, and filing one; headings never skip a level; the splash never fades text over a translucent background |
 | `layout` | The in-place layout editor on every page that offers it, driven for real rather than asserted from markup |
 | `security` | Editor-pasted HTML/CSS/JS cannot reach the host page — no cookies, no storage, no DOM — plus escaping of reader-visible text |
 | `breaking` | Which story reaches the breaking banner: a featured pick first, the newest otherwise, never one readers can't see |
@@ -38,6 +38,7 @@ passes, that click path genuinely works.
 | `tags` | The editors' tag list: no duplicates by case, renames follow the articles, and the whole system switches off |
 | `upcoming` | The Schedule tab: every store gathered into one list, in the order it goes out, and publishing early |
 | `sync` | Shared editing: only your own changes go up, incoming ones never clobber unsent work, offline survives |
+| `stable` | Nothing the reader can see moves after the first paint: the nav builds before paint, the banner ships hidden, `<main>` reserves its height, and a late web font is never swapped in over text already on screen |
 
 ## Why these exist
 

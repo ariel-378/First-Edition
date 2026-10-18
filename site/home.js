@@ -62,7 +62,7 @@
     return `
       <article class="ha-left-story" data-home-id="${escapeHtml(a.id)}">
         <a class="ha-left-media" href="${href(a)}">${mediaImg(a, "ha-left-img")}</a>
-        <h3 class="ha-left-title"><a href="${href(a)}">${escapeHtml(a.title)}</a></h3>
+        <h2 class="ha-left-title"><a href="${href(a)}">${escapeHtml(a.title)}</a></h2>
         <div class="ha-byline">${credit(a)}</div>
       </article>`;
   }
@@ -71,7 +71,7 @@
     return `
       <article class="ha-right-item" data-home-id="${escapeHtml(a.id)}">
         <div class="ha-right-text">
-          <h4 class="ha-right-title"><a href="${href(a)}">${escapeHtml(a.title)}</a></h4>
+          <h3 class="ha-right-title"><a href="${href(a)}">${escapeHtml(a.title)}</a></h3>
           <div class="ha-byline">${credit(a)}</div>
         </div>
         <a class="ha-right-thumb" href="${href(a)}">${mediaImg(a, "ha-right-img")}</a>
@@ -159,10 +159,12 @@
     const breaking = WLArticles.getFeatured("Breaking")
       || sorted.find(a => a.section === "Breaking");
     if (!breaking) {
+      banner.hidden = true;
       banner.style.display = "none";
       overlay.style.display = "none";
       return;
     }
+    banner.hidden = false;   // shipped hidden, so a page with no breaking story never paints and then drops it
     banner.style.display = "";
     overlay.style.display = "";
     const bannerText = banner.querySelectorAll("span")[1];

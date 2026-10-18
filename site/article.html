@@ -71,7 +71,7 @@
         </div>
 
         <div id="art-gallery" data-move-key="gallery" data-move-label="Photo gallery" hidden>
-          <h3 class="gallery-heading">Photos</h3>
+          <h2 class="gallery-heading">Photos</h2>
           <div class="gallery-grid" id="gallery-grid"></div>
         </div>
 
@@ -80,7 +80,7 @@
         <div class="article-tags" id="article-tags" data-move-key="tags" data-move-label="Tags" hidden></div>
 
         <section class="related-articles" id="related-articles" data-move-key="related" data-move-label="More from this section" hidden>
-          <h3 class="related-heading">More from this section</h3>
+          <h2 class="related-heading">More from this section</h2>
           <div class="related-grid" id="related-grid"></div>
         </section>
       </div>
@@ -347,7 +347,7 @@
     grid.innerHTML = related.map(r => `
       <a class="related-card" href="${WL_storyHref(r.id)}">
         <div class="kicker">${escapeHtml(r.section)}</div>
-        <h4>${escapeHtml(r.title)}</h4>
+        <h3>${escapeHtml(r.title)}</h3>
         <p>${escapeHtml(r.deck)}</p>
         <div class="byline">By ${escapeHtml((window.WL_articleAuthors && window.WL_bylineText) ? WL_bylineText(WL_articleAuthors(r)) : (r.byline || ""))} · ${escapeHtml(r.date)}</div>
       </a>
