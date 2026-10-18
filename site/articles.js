@@ -1,6 +1,6 @@
 // Article content — sample stories for the demo site.
 //
-// Everything here is invented: East High School, The Wildcat Times, every
+// Everything here is invented: East High School, The Template Times, every
 // byline and every person quoted. It exists so a fresh copy of the template
 // looks like a working newspaper instead of an empty page. Delete the whole
 // object to start clean, or replace stories from the Editor dashboard; nothing
