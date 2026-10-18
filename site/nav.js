@@ -59,6 +59,21 @@ window.WLNav = (function () {
     build();
   }
 
+  // Build as soon as the parser has inserted the nav element, which is before
+  // the browser's first paint — a MutationObserver callback is a microtask, so
+  // it runs inside the parsing task that added the node. Waiting for
+  // DOMContentLoaded instead let a slow connection paint an empty nav and then
+  // push the whole page down when the links arrived. The DOMContentLoaded
+  // listener stays as the fallback for anything that strips the observer.
+  if (typeof MutationObserver === "function") {
+    const early = new MutationObserver(() => {
+      if (!document.querySelector(".sectionnav-inner")) return;
+      early.disconnect();
+      build();
+    });
+    early.observe(document.documentElement, { childList: true, subtree: true });
+    document.addEventListener("DOMContentLoaded", () => early.disconnect());
+  }
   document.addEventListener("DOMContentLoaded", build);
   document.addEventListener("wl-sections-change", build);
 

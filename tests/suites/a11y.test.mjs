@@ -160,5 +160,50 @@ export async function run() {
       /id="search-summary"[^>]*aria-live/.test(src) || /aria-live[^>]*id="search-summary"/.test(src));
   }
 
+  // ===== Headings step down one level at a time =====
+  // Lighthouse's 1.0.1 audit flagged h1 → h3 on the home rails and on the
+  // "More from this section" block. A screen-reader user moving by heading
+  // reads the level as structure, so a skipped level is a missing section.
+  // The pages are rendered for real; hidden blocks (an empty gallery) do not count.
+  {
+    const levels = ctx => ctx.$$("h1, h2, h3, h4, h5, h6")
+      .filter(h => !h.closest("[hidden]") && h.textContent.trim())
+      .map(h => Number(h.tagName[1]));
+    const skips = seq => seq.filter((lvl, i) => i > 0 && lvl > seq[i - 1] + 1).length;
+
+    const seed = await loadPage("article.html", { editor: false });
+    const articleId = Object.keys(seed.window.WLArticles.getAll())[0];
+    const videoId = Object.keys(seed.window.WL_VIDEOS || {})[0];
+    seed.close();
+
+    const cases = [["index.html", ""], ["news.html", ""], ["section.html", "?name=Sports"]];
+    if (articleId) cases.push(["article.html", `?id=${encodeURIComponent(articleId)}`]);
+    if (videoId) cases.push(["video.html", `?id=${encodeURIComponent(videoId)}`]);
+    for (const [page, query] of cases) {
+      const ctx = await loadPage(page, { editor: false, query });
+      const seq = levels(ctx);
+      check.ok(`${page}${query}: headings never skip a level`, seq.length > 1 && skips(seq) === 0, `levels: ${seq.join(" ")}`);
+      ctx.close();
+    }
+  }
+
+  // ===== The splash never fades to a translucent background =====
+  // White on the accent colour passes contrast; white on the accent at half
+  // opacity over the page does not (2.7:1 in the 1.0.1 audit, caught mid-fade).
+  // The splash leaves by sliding off and its text appears by visibility, so
+  // there is no half-faded state for an audit — or a reader — to catch.
+  {
+    const css = fs.readFileSync(path.join(SITE, "styles.css"), "utf8");
+    const rule = sel => (css.match(new RegExp(sel.replace(/[.\-]/g, "\\$&") + "\\s*\\{([^}]*)\\}")) || [])[1];
+    const keyframes = name => (css.match(new RegExp("@keyframes " + name + "\\s*\\{([\\s\\S]*?)\\n\\}")) || [])[1];
+    const exit = rule(".wl-splash.fade-out");
+    check.ok("the splash exits without animating opacity", exit && !/opacity/.test(exit), exit);
+    check.ok("the splash background stays opaque while it leaves", !/transition:[^;]*opacity/.test(rule(".wl-splash") || ""));
+    for (const name of ["splash-fade-in", "splash-letter-type"]) {
+      const frames = keyframes(name);
+      check.ok(`${name} brings text in by visibility, not opacity`, frames && /visibility/.test(frames) && !/opacity/.test(frames), frames);
+    }
+  }
+
   return check;
 }

@@ -30,15 +30,67 @@
   }
   setColors();
 
+  // The self-hosted fonts, by family name, with the files that carry them.
+  // styles.css declares each family with font-display: optional and a
+  // "<Family> Fallback" face measured to the same width and height, so a page
+  // never re-wraps when a font arrives — see the top of styles.css.
+  var WEB_FONTS = {
+    "Old Standard TT": ["fonts/old-standard-tt-400.woff2", "fonts/old-standard-tt-700.woff2"],
+    "Playfair Display": ["fonts/playfair-display.woff2"],
+    "Libre Franklin": ["fonts/libre-franklin.woff2"],
+    "Lora": ["fonts/lora.woff2"],
+    "UnifrakturMaguntia": ["fonts/unifraktur-maguntia-400.woff2"]
+  };
+
+  /** The first family in a CSS font stack, unquoted: '"Lora", Georgia' → Lora. */
+  function firstFamily(stack) {
+    var first = String(stack || "").split(",")[0].trim();
+    return first.replace(/^["']|["']$/g, "");
+  }
+
+  /** Put the matched fallback face right after a web font: '"Lora", Georgia' → '"Lora", "Lora Fallback", Georgia'. */
+  function withFallback(stack) {
+    var fam = firstFamily(stack);
+    if (!WEB_FONTS[fam] || stack.indexOf(fam + " Fallback") !== -1) return stack;
+    var parts = String(stack).split(",");
+    parts.splice(1, 0, ' "' + fam + ' Fallback"');
+    return parts.join(",");
+  }
+
   // Fonts — the picker sets --font-display / -serif / -sans; unset keys keep the
   // stylesheet's :root defaults, so an override is only ever what changed.
   function setFonts() {
     var f = cfg.fonts || {};
     FONT_KEYS.forEach(function (k) {
-      if (f[k]) root.style.setProperty("--font-" + k, f[k]);
+      if (f[k]) root.style.setProperty("--font-" + k, withFallback(f[k]));
     });
   }
   setFonts();
+
+  // Preload the fonts this page will use, so they are fetched alongside the
+  // scripts instead of after first layout. Resolved against this script's own
+  // URL, because generated story pages live a folder down.
+  function preloadFonts() {
+    var head = document.head;
+    var script = document.currentScript;
+    if (!head || !script || !script.src || typeof getComputedStyle !== "function") return;
+    var styles = getComputedStyle(root);
+    var files = {};
+    FONT_KEYS.concat(["name"]).forEach(function (k) {
+      var fam = firstFamily(styles.getPropertyValue("--font-" + k));
+      (WEB_FONTS[fam] || []).forEach(function (file) { files[file] = true; });
+    });
+    Object.keys(files).forEach(function (file) {
+      var link = document.createElement("link");
+      link.rel = "preload";
+      link.as = "font";
+      link.type = "font/woff2";
+      link.crossOrigin = "anonymous";
+      link.href = new URL(file, script.src).href;
+      head.appendChild(link);
+    });
+  }
+  preloadFonts();
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (ch) {

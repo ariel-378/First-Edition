@@ -2,19 +2,26 @@
 
 /* Self-hosted fonts (SIL OFL, see fonts/OFL.txt) — no external request, so the
    site runs under a strict CSP and stays private/offline-capable. @font-face
-   font-family MUST be the literal family name (a var() here would break it). */
+   font-family MUST be the literal family name (a var() here would break it).
+
+   font-display: optional — a web font is used only if it has arrived by the
+   first paint; otherwise the matched fallback below stays for this page view and
+   the font is used from the next page on. brand.js preloads the configured
+   fonts so they almost always arrive in time; what this buys is that text never
+   re-wraps and the page never jumps when a font lands late (that swap was the
+   whole of the layout shift measured in the 1.0.1 report). */
 @font-face {
   font-family: "Old Standard TT";
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: url("fonts/old-standard-tt-400.woff2") format("woff2");
 }
 @font-face {
   font-family: "Old Standard TT";
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: optional;
   src: url("fonts/old-standard-tt-700.woff2") format("woff2");
 }
 /* Playfair Display / Libre Franklin / Lora are variable — one file, 400–700. */
@@ -22,30 +29,49 @@
   font-family: "Playfair Display";
   font-style: normal;
   font-weight: 400 700;
-  font-display: swap;
+  font-display: optional;
   src: url("fonts/playfair-display.woff2") format("woff2");
 }
 @font-face {
   font-family: "Libre Franklin";
   font-style: normal;
   font-weight: 400 700;
-  font-display: swap;
+  font-display: optional;
   src: url("fonts/libre-franklin.woff2") format("woff2");
 }
 @font-face {
   font-family: "Lora";
   font-style: normal;
   font-weight: 400 700;
-  font-display: swap;
+  font-display: optional;
   src: url("fonts/lora.woff2") format("woff2");
 }
 @font-face {
   font-family: "UnifrakturMaguntia";
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: url("fonts/unifraktur-maguntia-400.woff2") format("woff2");
 }
+
+/* Fallback faces with the web fonts' metrics. Each is a system font scaled and
+   re-measured (size-adjust, ascent/descent/line-gap overrides) so that a line
+   set in the fallback is the same width and height as the same line in the web
+   font. brand.js puts "<Family> Fallback" right after the family in every font
+   stack, so these are what readers see until the web font is in the cache.
+   Values were measured in Chrome against the shipped .woff2 files; weight 700
+   differs because bold system fonts are much wider than these designs. The
+   overrides are divided by size-adjust, because Chrome scales them by it. */
+@font-face { font-family: "Old Standard TT Fallback"; src: local("Georgia"); font-weight: 400; size-adjust: 99.25%; ascent-override: 76.57%; descent-override: 24.18%; line-gap-override: 24.18%; }
+@font-face { font-family: "Old Standard TT Fallback"; src: local("Georgia Bold"), local("Georgia-Bold"); font-weight: 700; size-adjust: 87.56%; ascent-override: 86.80%; descent-override: 27.41%; line-gap-override: 27.41%; }
+@font-face { font-family: "Playfair Display Fallback"; src: local("Georgia"); font-weight: 400; size-adjust: 100.16%; ascent-override: 107.83%; descent-override: 24.96%; line-gap-override: 0.00%; }
+@font-face { font-family: "Playfair Display Fallback"; src: local("Georgia Bold"), local("Georgia-Bold"); font-weight: 700; size-adjust: 88.86%; ascent-override: 121.54%; descent-override: 28.13%; line-gap-override: 0.00%; }
+@font-face { font-family: "Lora Fallback"; src: local("Georgia"); font-weight: 400; size-adjust: 104.45%; ascent-override: 96.70%; descent-override: 25.85%; line-gap-override: 0.00%; }
+@font-face { font-family: "Lora Fallback"; src: local("Georgia Bold"), local("Georgia-Bold"); font-weight: 700; size-adjust: 92.43%; ascent-override: 109.27%; descent-override: 29.21%; line-gap-override: 0.00%; }
+@font-face { font-family: "Libre Franklin Fallback"; src: local("Helvetica Neue"), local("Arial"); font-weight: 400; size-adjust: 102.83%; ascent-override: 94.33%; descent-override: 24.31%; line-gap-override: 0.00%; }
+@font-face { font-family: "Libre Franklin Fallback"; src: local("Helvetica Neue Bold"), local("HelveticaNeue-Bold"), local("Arial Bold"), local("Arial-BoldMT"); font-weight: 700; size-adjust: 100.58%; ascent-override: 96.44%; descent-override: 24.86%; line-gap-override: 0.00%; }
+@font-face { font-family: "UnifrakturMaguntia Fallback"; src: local("Georgia"); font-weight: 400; size-adjust: 88.22%; ascent-override: 88.42%; descent-override: 28.34%; line-gap-override: 0.00%; }
+@font-face { font-family: "UnifrakturMaguntia Fallback"; src: local("Georgia Bold"), local("Georgia-Bold"); font-weight: 700; size-adjust: 76.17%; ascent-override: 102.40%; descent-override: 32.82%; line-gap-override: 0.00%; }
 
 :root {
   --ink: #121212;
@@ -56,7 +82,7 @@
   --accent: #2e7d32;
 
   /* Typography tokens — the Design-tab font pickers set these via brand.js. */
-  --font-display: "Old Standard TT", Georgia, "Times New Roman", serif;
+  --font-display: "Old Standard TT", "Old Standard TT Fallback", Georgia, "Times New Roman", serif;
   --font-serif: Georgia, "Times New Roman", serif;
   --font-sans: "Helvetica Neue", Arial, sans-serif;
   --font-name: var(--font-display);   /* the masthead nameplate; may differ from headlines */
@@ -113,7 +139,7 @@ textarea:focus-visible,
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .wl-splash { transition: opacity 0.01ms !important; }
+  .wl-splash { transition-duration: 0.01ms !important; }
 }
 
 /* ===== Top bar ===== */
@@ -305,8 +331,16 @@ textarea:focus-visible,
   margin: 0 auto;
   padding: 24px 20px 60px;
 }
+/* Renderers fill <main> after the first paint on a slow connection. Reserving
+   a viewport of height keeps the footer below the fold until then, so nothing
+   the reader can see moves when the content lands (the layout shift measured
+   in the 1.0.1 report). */
+#main-content { min-height: 100vh; }
 
 /* ===== Breaking news banner ===== */
+/* Hidden in the markup; home.js reveals it only when a story is marked
+   Breaking, so the common case never paints a banner that then disappears. */
+.breaking-banner[hidden] { display: none; }
 .breaking-banner {
   background: var(--accent);
   color: #fff;
@@ -404,6 +438,7 @@ textarea:focus-visible,
 @media (max-width: 1000px) {
   .home-atlantic { grid-template-columns: 1fr 1fr; gap: 32px; }
   .ha-right { grid-column: 1 / -1; border-top: 1px solid var(--ink); padding-top: 24px; }
+  .ha-right:empty { border-top: 0; padding-top: 0; }   /* no box to shift before it is rendered */
 }
 @media (max-width: 640px) {
   .home-atlantic { grid-template-columns: 1fr; }
@@ -1847,8 +1882,8 @@ body.wl-layout-edit [data-zone]:empty::after {
   padding: 0;
 }
 .related-card:hover { text-decoration: none; }
-.related-card:hover h4 { text-decoration: underline; }
-.related-card h4 {
+.related-card:hover h3 { text-decoration: underline; }
+.related-card h3 {
   font-family: var(--font-serif);
   font-size: 18px;
   line-height: 1.25;
@@ -1907,6 +1942,8 @@ body.wl-layout-edit [data-zone]:empty::after {
 .article-photo {
   width: 100%;
   height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
   display: block;
   margin: 0 0 10px;
 }
@@ -1964,11 +2001,10 @@ footer a:hover { opacity: 0.85; }
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  opacity: 1;
   overflow: hidden;
-  transition: opacity 0.7s ease;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.wl-splash.fade-out { opacity: 0; pointer-events: none; }
+.wl-splash.fade-out { transform: translateY(-100%); pointer-events: none; }
 .wl-splash-stack {
   text-align: center;
   color: #fff;
@@ -1980,12 +2016,12 @@ footer a:hover { opacity: 0.85; }
   font-weight: 700;
   line-height: 0.9;
   letter-spacing: -4px;
-  opacity: 0;
+  visibility: hidden;
   animation: splash-fade-in 0.8s ease-out forwards;
 }
 @keyframes splash-fade-in {
-  0%   { opacity: 0; transform: translateY(6px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0%   { visibility: visible; transform: translateY(10px); }
+  100% { visibility: visible; transform: translateY(0); }
 }
 
 /* "The Student Times" types out one letter at a time. Each .wl-splash-letter
@@ -2001,7 +2037,7 @@ footer a:hover { opacity: 0.85; }
 .wl-splash-letter,
 .wl-splash-space {
   display: inline-block;
-  opacity: 0;
+  visibility: hidden;
   animation-name: splash-letter-type;
   animation-duration: 0.25s;
   animation-timing-function: ease-out;
@@ -2009,8 +2045,8 @@ footer a:hover { opacity: 0.85; }
 }
 .wl-splash-space { width: 0.35em; }
 @keyframes splash-letter-type {
-  0%   { opacity: 0; transform: translateY(4px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0%   { visibility: visible; transform: translateY(4px); }
+  100% { visibility: visible; transform: translateY(0); }
 }
 
 /* ===== Account / auth ===== */

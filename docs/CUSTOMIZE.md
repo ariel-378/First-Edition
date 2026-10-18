@@ -34,6 +34,24 @@ In `config.js` you can set:
 Colors and the favicon update instantly; the name, dateline, flourish, and
 footer update on every page. Nothing else needs editing.
 
+**Keep `colors.accent` dark enough for white text.** The opening splash and the
+breaking-news banner set white text on the accent, so it needs a contrast ratio
+of at least 3:1 against white (the shipped red is 5.4:1). A pale school colour
+such as gold fails that; use the darkest version of your colour the brand allows.
+Check a candidate at https://webaim.org/resources/contrastchecker/ with white as
+the text colour.
+
+**Fonts.** The five bundled typefaces are declared `font-display: optional`: a
+font is used only if it has arrived by the time the page first paints, and
+otherwise a system font scaled to the same widths stands in for that page view.
+`brand.js` preloads whichever fonts your `config.js` names, so on anything but a
+very slow first visit the real font is there in time, and from the next page on
+it is cached. What this buys is that text never re-wraps and the page never
+jumps when a font lands late. If you add a typeface of your own, give it a
+matching `"<Family> Fallback"` face in `styles.css` (copy one of the existing
+ones and re-measure its `size-adjust`) and list its file in `WEB_FONTS` in
+`brand.js`.
+
 ### After changing `name` or `school`, run this once
 
 ```bash
