@@ -7,7 +7,7 @@
 // ============================================================================
 window.WL_CONFIG = {
   // ── Names ────────────────────────────────────────────────────────────────
-  name: "The Wildcat Times",      // the masthead headline (and browser tab)
+  name: "The Template Times",      // the masthead headline (and browser tab)
   school: "East High School",          // shown in the dateline under the masthead
   tagline: "Student Newspaper",   // dateline suffix, e.g. "Student Press Since 1998"
   splashMark: "PRESS",            // the big word behind the name on the opening splash

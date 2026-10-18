@@ -52,7 +52,7 @@ rather than an empty page: eleven stories, a fourteen-person masthead, three
 teams with brackets, two videos, and flat SVG illustrations standing in for
 photos.
 
-**All of it is invented** — East High School, The Wildcat Times, every byline,
+**All of it is invented** — East High School, The Template Times, every byline,
 every staff member, every person quoted, every score. None of it refers to a
 real school or a real person. To start clean, empty the objects in
 `site/articles.js`, `site/staff-data.js`, `site/teams.js`, and
