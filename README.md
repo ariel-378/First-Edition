@@ -121,5 +121,5 @@ private reporting, not a public issue: see [SECURITY.md](SECURITY.md).
 
 [MIT](LICENSE) — take it, rename it, run your own paper on it. No attribution
 required in the site itself, though a line in your colophon is welcome. The
-sample content (East High School, The Template Times, every byline and score)
+sample content (East High School, The Wildcat Times, every byline and score)
 is invented and covered by the same licence.

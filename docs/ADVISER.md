@@ -59,7 +59,7 @@ about fifteen minutes.
    The tab hands you a small settings file to pass to whoever manages the copy
    on GitHub; once it is added, every reader sees your branding.
 
-The sample newsroom that ships with the site, "The Template Times" of "East High
+The sample newsroom that ships with the site, "The Wildcat Times" of "East High
 School," is entirely invented. Clearing it out so your paper starts empty is
 part of the same handoff.
 

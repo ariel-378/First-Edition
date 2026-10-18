@@ -7,7 +7,7 @@
 window.WL_VIDEOS = {
   "interview-board-later-start": {
     title: "Two board members on the 8:40 vote",
-    description: "The Template Times sat down with Dana Whitfield and Ellis Fung, who voted opposite ways on the later start time, to talk through what convinced each of them.",
+    description: "The Wildcat Times sat down with Dana Whitfield and Ellis Fung, who voted opposite ways on the later start time, to talk through what convinced each of them.",
     url: "https://www.youtube.com/watch?v=TatD16J7f2I",
     byline: "Priya Raghunathan",
     date: "May 13, 2026",
