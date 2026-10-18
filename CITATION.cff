@@ -32,3 +32,16 @@ authors:
     given-names: Ariel L.
     affiliation: "Maret School, Washington, DC"
     orcid: "https://orcid.org/0009-0002-5287-7579"
+preferred-citation:
+  type: report
+  title: "First Edition: a zero-build publishing platform for student newspapers"
+  authors:
+    - family-names: Pollard
+      given-names: Ariel L.
+      affiliation: "Maret School, Washington, DC"
+      orcid: "https://orcid.org/0009-0002-5287-7579"
+  publisher:
+    name: Zenodo
+  year: 2026
+  doi: 10.5281/zenodo.23455214
+  notes: "Preprint"

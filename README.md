@@ -98,8 +98,8 @@ Software: Pollard, A. L. (2026). *First Edition* (Version 1.0.1) [Computer softw
 Zenodo. https://doi.org/10.5281/zenodo.23445562
 
 Report (design, architecture, tests, measurements): Pollard, A. L. (2026). *First Edition:
-a zero-build publishing platform for student newspapers*. TechRxiv.
-https://doi.org/10.36227/techrxiv.XXXXXXX
+a zero-build publishing platform for student newspapers* [Preprint]. Zenodo.
+https://doi.org/10.5281/zenodo.23455214
 
 GitHub's **Cite this repository** button (right sidebar) gives the same reference in APA
 and BibTeX from `CITATION.cff`.
