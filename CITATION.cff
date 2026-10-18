@@ -3,10 +3,15 @@ message: "If you use First Edition, please cite it using the metadata in this fi
 type: software
 title: "First Edition: a zero-build publishing platform for student newspapers"
 version: 1.0.1
+doi: 10.5281/zenodo.23445562
 date-released: 2026-10-18
 license: MIT
 repository-code: "https://github.com/ariel-378/First-Edition"
 url: "https://ariel-378.github.io/First-Edition/"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23445561
+    description: "Concept DOI for all versions"
 abstract: >-
   A free, open-source website and editor dashboard for student newspapers, written in
   plain HTML, CSS and JavaScript with no build step, no framework and no runtime

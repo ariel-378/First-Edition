@@ -5,7 +5,7 @@ All notable changes to First Edition are listed here. The format follows
 
 ## [Unreleased]
 
-## [1.0.1] — 2026-10-18
+## [1.0.1] — 2026-10-18 — DOI: https://doi.org/10.5281/zenodo.23445562
 
 The release described and measured in the report (commit `98dedf5` plus citation metadata;
 no code changes since).

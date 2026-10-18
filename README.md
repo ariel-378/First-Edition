@@ -92,10 +92,10 @@ pages. See [tests/README.md](tests/README.md).
 
 ## Cite this
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23445561.svg)](https://doi.org/10.5281/zenodo.23445561)
 
 Software: Pollard, A. L. (2026). *First Edition* (Version 1.0.1) [Computer software].
-Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
+Zenodo. https://doi.org/10.5281/zenodo.23445562
 
 Report (design, architecture, tests, measurements): Pollard, A. L. (2026). *First Edition:
 a zero-build publishing platform for student newspapers*. TechRxiv.
