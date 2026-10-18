@@ -1,0 +1,32 @@
+{
+  "title": "First Edition: a zero-build publishing platform for student newspapers",
+  "upload_type": "software",
+  "description": "<p>A free, open-source website and editor dashboard for student newspapers, written in plain HTML, CSS and JavaScript with no build step, no framework and no runtime dependencies. It runs on GitHub Pages or inside a school's existing website platform, which supplies sign-in and decides who is an editor. Every published story is also emitted as a static page so links preview in group chats; a WordPress or SNO archive imports in one command; 1,093 automated checks in 25 jsdom suites drive the real pages.</p>",
+  "creators": [
+    {
+      "name": "Pollard, Ariel L.",
+      "affiliation": "Maret School, Washington, DC",
+      "orcid": "0009-0002-5287-7579"
+    }
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "language": "eng",
+  "version": "1.0.1",
+  "keywords": [
+    "student journalism",
+    "scholastic press",
+    "static web publishing",
+    "zero-dependency software",
+    "content management",
+    "GitHub Pages",
+    "web accessibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://ariel-378.github.io/First-Edition/",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    }
+  ]
+}

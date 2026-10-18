@@ -90,6 +90,20 @@ pages. See [tests/README.md](tests/README.md).
   administrator: where content lives and a setup checklist.
 - [docs/CODE-GUIDE.md](docs/CODE-GUIDE.md) — a developer's tour of the code.
 
+## Cite this
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+
+Software: Pollard, A. L. (2026). *First Edition* (Version 1.0.1) [Computer software].
+Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
+
+Report (design, architecture, tests, measurements): Pollard, A. L. (2026). *First Edition:
+a zero-build publishing platform for student newspapers*. TechRxiv.
+https://doi.org/10.36227/techrxiv.XXXXXXX
+
+GitHub's **Cite this repository** button (right sidebar) gives the same reference in APA
+and BibTeX from `CITATION.cff`.
+
 ## How this was built
 
 I designed and wrote First Edition starting in July 2026, while rebuilding my

@@ -5,11 +5,18 @@ All notable changes to First Edition are listed here. The format follows
 
 ## [Unreleased]
 
-- WordPress / SNO importer: `npm run import -- export.xml` turns a WordPress
-  export into a content bundle the editor loads in one click (`setup/import-wxr.mjs`)
-- Accessibility: the demo-mode editor link meets contrast; thumbnail links no
-  longer duplicate the headline link for screen readers
+## [1.0.1] — 2026-10-18
+
+The release described and measured in the report (commit `98dedf5` plus citation metadata;
+no code changes since).
+
+- WordPress / SNO importer: `npm run import -- export.xml` turns a WordPress export into a
+  content bundle the editor loads in one click (`setup/import-wxr.mjs`)
+- Accessibility: the demo-mode editor link meets contrast; thumbnail links no longer
+  duplicate the headline link for screen readers
 - Lighthouse accessibility gate in CI (fails under 90 on home, section, article)
+- Citation metadata: `CITATION.cff` and `.zenodo.json`; archived on Zenodo on release
+- 1093 automated checks across 25 suites
 
 ## [1.0.0] — 2026-10-14
 

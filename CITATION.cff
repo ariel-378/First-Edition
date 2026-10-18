@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use First Edition, please cite it using the metadata in this file."
+type: software
+title: "First Edition: a zero-build publishing platform for student newspapers"
+version: 1.0.1
+date-released: 2026-10-18
+license: MIT
+repository-code: "https://github.com/ariel-378/First-Edition"
+url: "https://ariel-378.github.io/First-Edition/"
+abstract: >-
+  A free, open-source website and editor dashboard for student newspapers, written in
+  plain HTML, CSS and JavaScript with no build step, no framework and no runtime
+  dependencies. It runs on GitHub Pages or inside a school's existing website platform,
+  which supplies sign-in and decides who is an editor. Every published story is also
+  emitted as a static page so links preview in group chats; a WordPress or SNO archive
+  imports in one command; 1,093 automated checks in 25 jsdom suites drive the real pages.
+keywords:
+  - student journalism
+  - scholastic press
+  - static web publishing
+  - zero-dependency software
+  - content management
+  - GitHub Pages
+  - web accessibility
+authors:
+  - family-names: Pollard
+    given-names: Ariel L.
+    affiliation: "Maret School, Washington, DC"
+    orcid: "https://orcid.org/0009-0002-5287-7579"
